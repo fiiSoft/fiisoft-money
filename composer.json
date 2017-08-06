@@ -1,0 +1,29 @@
+{
+    "name": "fiisoft/money",
+    "type": "library",
+    "description": "Some classes to help processing money.",
+    "keywords": ["money"],
+    "homepage": "https://github.com/fiiSoft/fiisoft-money",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "FiiSoft",
+            "email": "fiisoft.production@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "FiiSoft\\Test\\": "tests/",
+            "FiiSoft\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.6.0",
+        "moneyphp/money": "^3.0.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7.19"
+    }
+}
