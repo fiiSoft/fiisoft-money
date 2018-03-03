@@ -56,4 +56,28 @@ final class MoneyFunc
         
         return $first === $second ?: Currency::from($first)->equals(Currency::from($second));
     }
+    
+    /**
+     * @param string $amount
+     * @param int $precision default 2
+     * @return string
+     */
+    public static function normaliseStringAmount($amount, $precision = 2)
+    {
+        return self::formatAmountAsString((float) str_replace([' ', ','], ['', '.'], $amount), $precision);
+    }
+    
+    /**
+     * @param float $amount
+     * @param int $precision default 2
+     * @return string
+     */
+    public static function formatAmountAsString($amount, $precision = 2)
+    {
+        if ($precision > 0) {
+            return rtrim(rtrim(number_format($amount, $precision, '.', ''), '0'), '.');
+        }
+        
+        return number_format($amount, $precision, '.', '');
+    }
 }

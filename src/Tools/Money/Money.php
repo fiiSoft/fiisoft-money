@@ -462,7 +462,7 @@ final class Money
         }
     
         if ($this->floatAmount !== null) {
-            return $this->formatFloatAsString($this->floatAmount);
+            return MoneyFunc::formatAmountAsString($this->floatAmount, $this->precision);
         }
     
         if ($this->intAmount !== null) {
@@ -507,15 +507,6 @@ final class Money
         }
     
         throw new LogicException('This line should be never reached');
-    }
-    
-    /**
-     * @param float $value
-     * @return string
-     */
-    private function formatFloatAsString($value)
-    {
-        return rtrim(rtrim(number_format($value, $this->precision, '.', ''), '0'), '.');
     }
     
     /**

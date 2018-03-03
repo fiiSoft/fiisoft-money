@@ -1,6 +1,7 @@
 /.idea/
 /vendor/
-/var/coverage
-/.settings
+/var/
+/.settings/
 /.buildpath
 /.project
+/composer.lock
